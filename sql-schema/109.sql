@@ -1,4 +1,4 @@
-CREATE TABLE tmp_table LIKE config;
+CREATE TABLE tmp_table LIKE config ROW_FORMAT=DYNAMIC;
 ALTER IGNORE TABLE tmp_table ADD UNIQUE INDEX uniqueindex_configname (config_name);
 INSERT IGNORE INTO tmp_table SELECT * FROM config;
 DROP TABLE config;

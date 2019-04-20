@@ -1,4 +1,4 @@
-CREATE TABLE  `locations` ( `id` INT NOT NULL AUTO_INCREMENT ,`location` TEXT NOT NULL ,`lat` FLOAT( 10, 6 ) NOT NULL ,`lng` FLOAT( 10, 6 ) NOT NULL ,`timestamp` DATETIME NOT NULL ,INDEX (  `id` )) ENGINE = INNODB;
+CREATE TABLE  `locations` ( `id` INT NOT NULL AUTO_INCREMENT ,`location` TEXT NOT NULL ,`lat` FLOAT( 10, 6 ) NOT NULL ,`lng` FLOAT( 10, 6 ) NOT NULL ,`timestamp` DATETIME NOT NULL ,INDEX (  `id` )) ENGINE = INNODB ROW_FORMAT=DYNAMIC;
 LOCK TABLES `devices` WRITE;
 ALTER TABLE `devices` ADD `override_sysLocation` bool DEFAULT false;
 UNLOCK TABLES;

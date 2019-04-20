@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `port_association_mode` (pom_id  int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(12) NOT NULL);
+CREATE TABLE IF NOT EXISTS `port_association_mode` (pom_id  int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(12) NOT NULL) ROW_FORMAT=DYNAMIC;
 INSERT INTO port_association_mode (pom_id, name) values (1, 'ifIndex');
 INSERT INTO port_association_mode (name) values ('ifName');
 INSERT INTO port_association_mode (name) values ('ifDescr');

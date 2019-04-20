@@ -1,5 +1,5 @@
 ALTER TABLE `alert_rules` ADD `query_builder` TEXT NOT NULL AFTER `query`;
-CREATE TABLE `alert_group_map` (`id` INT PRIMARY KEY AUTO_INCREMENT, `rule_id` INT NOT NULL, `group_id` INT NOT NULL);
+CREATE TABLE `alert_group_map` (`id` INT PRIMARY KEY AUTO_INCREMENT, `rule_id` INT NOT NULL, `group_id` INT NOT NULL) ROW_FORMAT=DYNAMIC;
 CREATE UNIQUE INDEX `alert_group_map_rule_id_group_id_uindex` ON `alert_group_map` (`rule_id`, `group_id`);
 INSERT INTO `alert_group_map` (`rule_id`, `group_id`) SELECT `rule`, SUBSTRING(`target`, 2) as `group_id` FROM `alert_map` WHERE `target` LIKE 'g%';
 DELETE FROM `alert_map` WHERE `target` LIKE 'g%';
